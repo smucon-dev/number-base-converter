@@ -2,9 +2,7 @@ package converter;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.MathContext;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
 public class NumberBaseConverter {
 
@@ -48,7 +46,7 @@ public class NumberBaseConverter {
             sb.append(toLetter(decimalAndRemainder[1].intValue(), base.intValue()));
         }
         sb.append(toLetter(decimal.intValue(), base.intValue()));
-        return sb.reverse() + (sourceNumber.indexOf(".") > -1 ? fromDecimalFraction(wholeAndPart[1], targetBase, precision) : "");
+        return sb.reverse() + (sourceNumber.contains(".")? fromDecimalFraction(wholeAndPart[1], targetBase, precision) : "");
     }
 
     // convert from another base to base 10

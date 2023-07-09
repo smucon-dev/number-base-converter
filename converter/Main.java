@@ -8,15 +8,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         // main menu
         while (true) {
-            System.out.printf("Enter two numbers in format: {source base} {target base} (To quit type /exit) ");
+            System.out.print("Enter two numbers in format: {source base} {target base} (To quit type /exit) ");
             var input = scanner.nextLine().split(" ");
 
             if (input[0].equals("/exit")) { break; }
 
             if (input.length == 2 && input[0].matches("\\d+") && input[0].matches("\\d+")) {
 
-                var sourceBase = Integer.valueOf(input[0]);
-                var targetBase = Integer.valueOf(input[1]);
+                var sourceBase = Integer.valueOf(input[0]).intValue();
+                var targetBase = Integer.valueOf(input[1]).intValue();
 
                 if (sourceBase < 2 || targetBase < 2 || sourceBase > 36 || targetBase > 36) {
                     System.out.println("Bases must be between 2 and 36 (inclusive).");
