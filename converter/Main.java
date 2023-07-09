@@ -15,8 +15,8 @@ public class Main {
 
             if (input.length == 2 && input[0].matches("\\d+") && input[0].matches("\\d+")) {
 
-                int sourceBase = Integer.valueOf(input[0]);
-                int targetBase = Integer.valueOf(input[1]);
+                int sourceBase = Integer.parseInt(input[0]);
+                int targetBase = Integer.parseInt(input[1]);
 
                 if (sourceBase < 2 || targetBase < 2 || sourceBase > 36 || targetBase > 36) {
                     System.out.println("Bases must be between 2 and 36 (inclusive).");
